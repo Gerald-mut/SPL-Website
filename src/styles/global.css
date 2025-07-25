@@ -1,0 +1,62 @@
+:root {
+  --font-header: 'Hahmlet', sans-serif;
+  --font-text: 'Lato', sans-serif;
+  --color-primary: #FFC107;
+  --color-dark: #1A1A1A;
+  --color-light: #F7F7F7;
+  --color-accent: #E91E63;
+  /* --section-spacing: 6rem; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-text);
+  /* background-color: rgb(24, 21, 21); */
+  color: var(--color-dark);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  color: var(--color-light)
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  color: var(--color-light);
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+
+
+
+button {
+  background: #FF5733;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.7rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: background 0.2s;
+}
+
+
+.hero-btn:hover {
+  background: #e14a28;
+}

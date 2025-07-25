@@ -1,0 +1,39 @@
+.modal-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: rgb(253, 253, 253);
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  position: relative;
+}
+
+.modal-content h2 {
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  color: #000000;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.modal-content ul {
+  margin-bottom: 1rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem; right: 0.5rem;
+  background: none; border: none;
+  font-size: 1.5rem; cursor: pointer;
+  color: #000000;
+}
