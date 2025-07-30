@@ -1,52 +1,79 @@
-import image from '/assets/home-img.jpg';
-import './hero.css';
 import { Helmet } from 'react-helmet';
+import './components.css';
 import HeroForm from './HeroForm';
-import React, { useState } from 'react';
-import { Modal, Button } from 'antd';
+import { Modal } from 'antd';
+import React, { useState, useEffect } from 'react';
+import { motion as Motion, AnimatePresence } from 'framer-motion';
 
-<Helmet>
-    <title>SPL - Home</title>
-    <meta title='SPL Kenya | Corporate Events, AV Production & Talent' />
-    <meta name="description" content="SPL is Nairobi’s premier event & talent production agency. From corporate galas to viral music videos, we deliver creativity, precision, and scale all under one roof. SPL delivers end‑to‑end event management, AV production, choreography & casting in Nairobi. One idea, flawless execution—get your quote today." />
-    <meta name="keywords" content="event production, talent agency, Nairobi, corporate events, music videos, creative agency" />
-</Helmet>
+const images = [
+  '/assets/home-img.jpg',
+  '/assets/choreography.jpg',
+  '/assets/events4.jpg'
+];
 
 const Hero = () => {
-   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [bgIndex, setBgIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBgIndex((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   const showModal = () => setIsModalOpen(true);
   const handleCancel = () => setIsModalOpen(false);
-    return (
-        <section className="hero"> 
-        <img className='background-img' src={image} alt="SPL Hero Background" />
-        <div className="hero-overlay"></div>
-        <div className="hero-content">
-            <div className="hero-text">
-                <h1 className="hero-title">
-                    Unforgettable Experiences<br />for Every Occasion
-                </h1>
-                <p className="hero-description">
-                    At SPL Company we specialise in creating vibrant and memorable events that leave a lasting impression.. At SPL Company we specialise in creating vibrant and memorable events that leave a lasting impression.
-                </p>
-            </div>
-            <div className="hero-action">
-                <button className="hero-btn"
-                onClick={ showModal }
-                >
-                    Get a Quote</button>
-                    <Modal
-                    title="Request a Quote"
-                    open={isModalOpen}
-                    onCancel={handleCancel}
-                    footer={null}
-                >
-                    <HeroForm onSuccess={handleCancel} />
-                </Modal>
-            </div>
-        </div>
-        </section>
-    )
-}
 
-export default Hero
+  return (
+    <>
+      <Helmet>
+        <title>SPL - Home</title>
+        <meta name="description" content="SPL is Nairobi’s premier event & talent production agency." />
+      </Helmet>
+
+      <section className="hero">
+        <div className="hero-background">
+          <AnimatePresence mode="wait">
+            <Motion.img
+              key={bgIndex}
+              src={images[bgIndex]}
+              className="background-img"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.0 }}
+              alt="Hero Background"
+            />
+          </AnimatePresence>
+        </div>
+
+        <div className="hero-overlay"></div>
+
+        <div className="hero-content">
+          <div className="hero-text">
+            <h1 className="hero-title">
+              Unforgettable Experiences<br />for Every Occasion
+            </h1>
+            <p className="hero-description">
+              At SPL Company we specialise in creating vibrant and memorable events that leave a lasting impression.
+            </p>
+          </div>
+          <div className="hero-action">
+            <button className="hero-btn" onClick={showModal}>Get a Quote</button>
+            <Modal
+              title="Request a Quote"
+              open={isModalOpen}
+              onCancel={handleCancel}
+              footer={null}
+            >
+              <HeroForm onSuccess={handleCancel} />
+            </Modal>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default Hero;

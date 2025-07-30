@@ -1,5 +1,5 @@
 import React from "react";
-import './ServiceCard.css'
+import './components.css';
 
 export default function ServiceCard({ service, onOpen }) {
     return (

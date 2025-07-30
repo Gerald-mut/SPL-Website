@@ -1,5 +1,4 @@
-// Testimonials.jsx
-import './Testimonials.css';
+import './components.css';
 const testimonials = [
   {
     quote: "Working with SEO Production Limited has consistently elevated the energy and vibrancy of our corporate events. Their ability to curate and deliver high-impact entertainment from dynamic drummers and captivating dancers to awe-inspiring acrobats has left lasting impressions on our guests and stakeholders.The team’s professionalism, punctuality, and attention to cultural detail are exceptional. Each performance is thoughtfully choreographed to reflect our brand values while engaging diverse audiences in a meaningful way. We highly recommend SEO Production Limited for any organization seeking memorable, spirited, and seamless entertainment experiences.",

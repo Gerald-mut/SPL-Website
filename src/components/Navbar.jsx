@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './Navbar.css';
+import './components.css';
 import logo from '/assets/logo.png'; 
 
 function Navbar() {
@@ -45,7 +45,6 @@ function Navbar() {
                 <li><a href="#services" className={activeSection === 'services' ? 'active' : ''}>Services</a></li>
                 <li><a href="#about" className={activeSection === 'about' ? 'active' : ''}>About</a></li>
                 <li><a href="#gallery" className={activeSection === 'gallery' ? 'active' : ''}>Gallery</a></li>
-                <li><a href="#testimonials" className={activeSection === 'testimonials' ? 'active' : ''}>Testimonials</a></li>
                 <li><a href="#contact" className={activeSection === 'contact' ? 'active' : ''}>Contact</a></li>
             </ul>
         </nav>

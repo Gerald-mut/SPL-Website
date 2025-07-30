@@ -1,5 +1,5 @@
 import React from "react";
-import './ServiceModal.css';
+import './components.css';
 
 export default function ServiceModal({ service, onClose }) {
     if(!service) return null;
