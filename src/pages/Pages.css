@@ -54,11 +54,47 @@
   color: #eee;
 }
 
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  .about-header {
+    font-size: 2rem;
+  }
+
+  .about-title {
+    font-size: 1.5rem;
+  }
+
+  .about-description {
+    font-size: 1.1rem;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 768px) {
+  .about-header {
+    font-size: 1.8rem;
+  }
+
+  .about-title {
+    font-size: 1.3rem;
+  }
+
+  .about-description {
+    font-size: 1rem;
+  }
+
+  .about-overlay {
+    padding: 4rem 1.5rem;
+  }
+
+
+}
+
 /* Contact */
 .contact {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
 }
 
@@ -85,14 +121,16 @@
 .contact-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 4rem;
+  justify-content: space-evenly;
+  gap: 6rem;
   border-radius: 1rem;
   padding: 11rem 3rem;
   width: 100%;
-  margin: 2rem;
+  margin: 0 auto;  
   position: relative;
   z-index: 3;
+  max-width: 1200px;  
+  flex-wrap: nowrap;  
 }
 
 .contact-text {
@@ -138,8 +176,12 @@
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  padding-right: 15rem;
+  padding: 0 1rem; 
+  /* min-width: 500px; */
+  flex: 1;
+  justify-content: center;
 }
+
 
 .booking-form {
   background: rgba(255, 255, 255, 0.08); 
@@ -164,7 +206,7 @@
 
 .booking-form input::placeholder,
 .booking-form select {
-  color: #ccc;
+  color: #000000;
 }
 
 .booking-form button {
@@ -186,3 +228,46 @@
   background-color: #e64a19;; 
 }
 
+@media (max-width: 1024px) {
+  .contact-title { font-size: 2.8rem; }
+  .contact-description,
+  .contact-info,
+  .contact-text h3 { font-size: 1.25rem; }
+  .booking-form { padding: 1.5rem; }
+  .booking-form input,
+  .booking-form select { padding: 0.7rem; font-size: 1rem; }
+  .booking-form button { font-size: 0.95rem; padding: 0.9rem 1.5rem; }
+}
+
+/* Small screens (phones) */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;   
+    padding: 5rem 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-text {
+    text-align: center;     
+  }
+
+  .contact-action {
+    padding: 0;         
+    width: 100%;
+    justify-content: center;
+  }
+
+  .booking-form {
+    width: 100%;
+    max-width: 100%;        
+  }
+  .contact-title { font-size: 2rem; }
+  .contact-description,
+  .contact-info,
+  .contact-text h3 { font-size: 1rem; }
+  .booking-form { padding: 1rem; max-width: 320px; }
+  .booking-form input,
+  .booking-form select { padding: 0.6rem; font-size: 0.9rem; }
+  .booking-form button { font-size: 0.85rem; padding: 0.7rem 1.2rem; }
+}

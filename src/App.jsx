@@ -1,15 +1,13 @@
-import './App.css'
-import Hero from './components/hero'
-import Navbar from './components/Navbar'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Services from './components/Services'
-import Gallery from './components/Gallery'
-import Testimonials from './components/Testimonials'
+import './App.css';
+import Hero from './components/hero';
+import Navbar from './components/Navbar';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Services from './components/Services';
+import Gallery from './components/Gallery';
+import Testimonials from './components/Testimonials';
 
 function App() {
-  
-
   return (
     <>
       <Navbar />
@@ -22,7 +20,7 @@ function App() {
         <section id="contact"><Contact /></section>
       </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

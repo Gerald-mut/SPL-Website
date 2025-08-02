@@ -8,7 +8,7 @@ export default function ServiceModal({ service, onClose }) {
                 <div className="modal-content" onClick={e => e.stopPropagation()}>
                     <button className="modal-close" onClick={onClose}>×</button>
                     <h2>{service.title}</h2>
-                    {service?.description}
+                    {service.description}
                 </div>
 `            </div>
         )

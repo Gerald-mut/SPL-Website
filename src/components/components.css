@@ -9,14 +9,22 @@
   padding-top: 3rem;
   background: transparent;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   z-index: 999;
 }
 
 .navbar-logo {
-  position: absolute;
-  left: 2rem;
+  /* position: absolute; */
+  left: 1rem;
+  /* height: 60px;   */
+  width: auto; 
+  position: absolute;      
+  top: 0.6rem;                   
+  left: 0.5rem;                   
+  width: 60px;           
+  height: auto;            
+  z-index: 10; 
 }
 
 .navbar-links {
@@ -44,15 +52,67 @@
 .navbar-links li a.active {
   color: #FF5733;
 }
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  right: 0.5rem;
+  top: 1rem;                   
+}
+
 html {
   scroll-behavior: smooth;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar-links {
+    flex-direction: column;
+    gap: 10px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 2rem;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 998;
+  }
+
+  .navbar-logo {
+    height: 35px;
+  }
+
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-links li a {
+    color: black;
+  }
+
+    .hamburger-icon {
+    font-size: 20px;
+  }
+}
+
+
 
 /* Hero */
 .hero {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   overflow: hidden;
 }
 
@@ -64,6 +124,7 @@ html {
   height: 100vh;
   object-fit: cover;
   z-index: 1;
+  transition: opacity 1s ease-in-out;
 }
 
 
@@ -150,7 +211,7 @@ html {
 
 /* Gallery */
 .gallery-carousel {
-  background-color: #000000;
+  background-color: #002147;
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -259,8 +320,13 @@ html {
   background-color: #002147;
   position: relative;
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   overflow: hidden;
+  padding: 4rem 2rem;
+  text-align: center;
+  display: flex;            
+  flex-direction: column;   
+  align-items: center; 
 }
 
 .services-header {
@@ -277,9 +343,11 @@ html {
 }
 
 .carousel-wrapper {
-  position: relative;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  /* padding-top: 5px; */
+  flex-direction: column;
+  width: 100%;
 }
 
 
@@ -290,10 +358,9 @@ html {
   align-items: center;
   gap: 1rem;
   margin-top: 2rem;
-} 
-
-
-
+  width: 100%;
+  max-width: 1200px;
+}
 
 .arrow.right {
   right: -1.5rem;
@@ -393,6 +460,7 @@ html {
   margin-bottom: 0.25rem;
 }
 
+
 /* Service Modal */
 .modal-backdrop {
   position: fixed; inset: 0;
@@ -401,7 +469,7 @@ html {
   z-index: 1000;
 }
 .modal-content {
-  background: rgb(253, 253, 253);
+  background: #002147;;
   padding: 2rem;
   max-width: 600px;
   width: 90%;
@@ -412,18 +480,19 @@ html {
 }
 
 .modal-content h2 {
-  color: #000000;
+  color: #ffffff;
   margin-bottom: 1rem;
 }
 
 .modal-content p {
-  color: #000000;
+  color: #ffffff;
   font-size: 20px;
   font-weight: 500;
 }
 
 .modal-content ul {
   margin-bottom: 1rem;
+  color: rgb(255, 255, 255);
 }
 
 .modal-close {
@@ -431,7 +500,25 @@ html {
   top: 0.5rem; right: 0.5rem;
   background: none; border: none;
   font-size: 1.5rem; cursor: pointer;
-  color: #000000;
+  color: #ffffff;
+}
+
+/* Responsive card size */
+@media (max-width: 1024px) {
+  .service-card {
+    max-width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+ .service-card {
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 0;
+  }
 }
 
 /* Testimonials */
@@ -441,7 +528,7 @@ html {
   padding: 4rem 2rem;
   text-align: center;
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   overflow: hidden;
   position: relative;
 }
@@ -487,4 +574,144 @@ html {
   font-weight: bold;
   color: #fffefe;
   font-size: 1.5rem;
+}
+
+/* === Responsive Scaling === */
+
+/* Medium screens (tablets, small laptops) */
+@media (max-width: 1024px) {
+  .navbar-links li a {
+    font-size: 20px;
+  }
+
+  .hero-title, services-header {
+    font-size: 2.8rem;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+  }
+
+  .hero-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+    height: 48px;
+    width: 200px;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+  .navbar-links li a {
+    font-size: 18px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-btn {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.5rem;
+    height: 44px;
+    width: 170px;
+  }
+
+  .hero-content {
+    padding: 9rem 2rem; /* tighter padding */
+  }
+}
+
+/* === Responsive Scaling for Entire Page === */
+
+/* Medium screens (tablets, small laptops) */
+@media (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+
+  .gallery-title, .card-overlay h2, .modal-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .gallery-description, .modal-content p, .testimonial-quote {
+    font-size: 1rem;
+  }
+
+  .hero-title, .services-header, .testimonials-title, .section-header {
+    font-size: 2.8rem;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+  }
+
+  .hero-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+    height: 48px;
+    width: 200px;
+  }
+
+  .testimonial-author {
+    font-size: 1.25rem;
+  }
+
+  .card-plus {
+    font-size: 1.25rem;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .gallery-title, .card-overlay h2, .modal-content h2 {
+    font-size: 1.25rem;
+  }
+
+  .gallery-description, .modal-content p, .testimonial-quote {
+    font-size: 0.9rem;
+  }
+
+  .hero-title, .services-header, .testimonials-title, .section-header {
+    font-size: 2.2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-btn {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.5rem;
+    height: 44px;
+    width: 170px;
+  }
+
+  .testimonial-author {
+    font-size: 1rem;
+  }
+
+  .card-plus {
+    font-size: 1rem;
+  }
+
+  .hero-content {
+    padding: 9rem 2rem; /* tighter padding */
+  }
+
+  .gallery-content {
+    padding: 1.5rem;
+  }
+
+  .modal-content {
+    padding: 1.5rem;
+  }
 }
