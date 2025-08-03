@@ -69,7 +69,6 @@ const Hero = () => {
           ))}
         </div>
 
-        {/* Optional overlay for better text visibility */}
         <div className="hero-overlay" style={{
           position: 'absolute',
           top: 0,

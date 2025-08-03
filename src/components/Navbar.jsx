@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './components.css';
 import logo from '/assets/logo.png'; 
+import throttle from 'lodash/throttle';
 
 function Navbar() {
   const [activeSection, setActiveSection] = useState('hero');
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = throttle(() => {
       const sections = ['hero', 'about', 'services', 'gallery', 'testimonials', 'contact'];
       let current = 'hero';
       for (let section of sections) {
@@ -21,7 +22,7 @@ function Navbar() {
         }
       }
       setActiveSection(current);
-    };
+    }, []);
 
     window.addEventListener('scroll', handleScroll);
     handleScroll();
@@ -31,20 +32,20 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src={logo} alt="SPL Logo"
-          style={{ width: 80, height: 80, margin: 0, padding: 0 }}
+        <img src={logo} alt="SPL Logo" className="navbar-logo"
+          style={{ width: 60, height: 60, margin: 0, padding: 0 }}
         />
       </div>
-      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+      <button className={`menu-toggle ${menuOpen ? 'active' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
         &#9776;
       </button>
-      <ul className={`navbar-links ${menuOpen ? 'open' : ''}`}>
+      <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
         <li><a href="#hero" className={activeSection === 'hero' ? 'active' : ''}>Home</a></li>
         <li><a href="#services" className={activeSection === 'services' ? 'active' : ''}>Services</a></li>
         <li><a href="#about" className={activeSection === 'about' ? 'active' : ''}>About</a></li>
         <li><a href="#gallery" className={activeSection === 'gallery' ? 'active' : ''}>Gallery</a></li>
         <li><a href="#contact" className={activeSection === 'contact' ? 'active' : ''}>Contact</a></li>
-      </ul>
+      </div>
     </nav>
   );
 }

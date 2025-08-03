@@ -15,15 +15,13 @@
 }
 
 .navbar-logo {
-  /* position: absolute; */
   left: 1rem;
-  /* height: 60px;   */
   width: auto; 
   position: absolute;      
-  top: 0.6rem;                   
-  left: 0.5rem;                   
-  width: 60px;           
-  height: auto;            
+  top: 1rem;                   
+  left: 0.3rem;      
+  width: 80px;                        
+  height: 80px;            
   z-index: 10; 
 }
 
@@ -59,10 +57,19 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: white;
+  color: #002147;
   position: absolute;
   right: 0.5rem;
-  top: 1rem;                   
+  top: 1rem;    
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background 0.3s ease, color 0.3s ease;               
+}
+
+.menu-toggle.active {
+  background: #002147;
+  color: white;
 }
 
 html {
@@ -84,9 +91,15 @@ html {
     z-index: 998;
   }
 
-  .navbar-logo {
-    height: 35px;
-  }
+.navbar-logo {
+  left: 1rem;
+  width: auto; 
+  position: absolute;      
+  top: 0.2rem;                   
+  left: 0rem;                              
+  height: auto;            
+  z-index: 10; 
+}
 
 
   .navbar-links.open {
@@ -107,12 +120,10 @@ html {
 }
 
 
-
 /* Hero */
 .hero {
   position: relative;
   width: 100vw;
-  /* height: 100vh; */
   overflow: hidden;
 }
 
@@ -135,7 +146,7 @@ html {
     width: 100vw;
     height: 100vh;
     background: rgba(0,0,0,0.5); 
-  z-index: 2;
+    z-index: 2;
 }
 
 .hero-content {
@@ -147,11 +158,9 @@ html {
   border-radius: 1rem;
   padding: 11rem 3rem;
   width: 100%;
-  /* max-width: 1100px; */
   margin: 8rem auto 0 auto;
   position: relative;
   z-index: 3;
-  /* background: rgba(0,0,0,0.2);  */
 }
 
 .hero-text {
@@ -201,7 +210,6 @@ html {
   height: 56px;
   width: 250px;
 }
-
 
 .hero-btn:hover {
   background: #e14a28; 
@@ -293,6 +301,7 @@ html {
   border-radius: 50%;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   transition: background 0.3s ease;
+  position: relative;
 }
 
 .arrow:hover {
@@ -300,9 +309,16 @@ html {
 }
 
 @media (max-width: 768px) {
+    .gallery-card {
+    position: relative;
+    justify-content: center;   
+  }
+
   .gallery-content {
     flex-direction: column;
     text-align: center;
+    order: 2;              
+    width: 100%; 
   }
 
   .gallery-image {
@@ -313,6 +329,28 @@ html {
   .gallery-text {
     text-align: center;
   }
+
+  .arrow {
+    display: inline-block !important; 
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: #ffffff;
+    font-size: 1.5rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .arrow.left {
+    left: -1rem; 
+    background: #ffffff;
+  }
+
+  .arrow.right {
+    right: -1rem;
+    background: #ffffff;
+  }
+
 }
 
 /* Services */
@@ -320,7 +358,6 @@ html {
   background-color: #002147;
   position: relative;
   width: 100vw;
-  /* height: 100vh; */
   overflow: hidden;
   padding: 4rem 2rem;
   text-align: center;
@@ -437,9 +474,7 @@ html {
   right: 1rem;
   width: 1.5rem;
   height: 1rem;
-  /* background-color: #FF5722; */
   border: none;
-  /* border-radius: 50%; */
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
@@ -448,7 +483,6 @@ html {
   justify-content: center;
   cursor: pointer;
   z-index: 3;
-  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); */
   margin-bottom: 1rem;
 }
 
@@ -467,6 +501,7 @@ html {
   background: rgba(0,0,0,0.6);
   display: flex; align-items: center; justify-content: center;
   z-index: 1000;
+  overflow-y: hidden;
 }
 .modal-content {
   background: #002147;;
@@ -477,6 +512,9 @@ html {
   overflow-y: auto;
   border-radius: 8px;
   position: relative;
+   overflow-y: scroll;
+   scrollbar-width: none;
+   -ms-overflow-style: none;
 }
 
 .modal-content h2 {
@@ -547,7 +585,6 @@ html {
 }
 
 .testimonial-card {
-  /* background-color: rgb(200, 16, 4); */
   background-color: #dd0909;
   padding: 1.5rem;
   border-radius: 10px;
@@ -622,7 +659,7 @@ html {
   }
 
   .hero-content {
-    padding: 9rem 2rem; /* tighter padding */
+    padding: 9rem 2rem; 
   }
 }
 
@@ -704,7 +741,7 @@ html {
   }
 
   .hero-content {
-    padding: 9rem 2rem; /* tighter padding */
+    padding: 9rem 2rem; 
   }
 
   .gallery-content {

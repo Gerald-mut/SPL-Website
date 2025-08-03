@@ -17,7 +17,10 @@ export default function About() {
       </Helmet>
 
       <section className="about">
-        <div className="bg-image"></div>
+                  <div className="bg-blue-500 text-white p-4">
+  Tailwind is working!
+</div>
+        <div className="bg-image">
         <div className="about-overlay">
           <h2 className="about-header">Who We Are</h2>
           <p className="about-title">Crafting Moments That Resonate.</p>
@@ -28,6 +31,7 @@ export default function About() {
           </p>
           <p className="about-title">Our Mission.</p>
           <p className='about-description'>Igniting stories that celebrate diversity, spark inspiration and radiate creative brilliance</p>
+        </div>
         </div>
       </section>
     </>

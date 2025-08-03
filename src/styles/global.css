@@ -5,7 +5,6 @@
   --color-dark: #1A1A1A;
   --color-light: #F7F7F7;
   --color-accent: #E91E63;
-  /* --section-spacing: 6rem; */
 }
 
 * {
@@ -16,10 +15,12 @@
 
 body {
   font-family: var(--font-text);
-  /* background-color: rgb(24, 21, 21); */
   color: var(--color-dark);
   line-height: 1.6;
-  overflow-x: hidden
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 h1, h2, h3, h4 {
@@ -41,9 +42,6 @@ p {
   text-shadow: 0 1px 4px rgba(0,0,0,0.4);
 }
 
-
-
-
 button {
   background: #FF5733;
   color: #fff;
@@ -56,7 +54,6 @@ button {
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   transition: background 0.2s;
 }
-
 
 .hero-btn:hover {
   background: #e14a28;

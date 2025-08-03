@@ -24,7 +24,7 @@
   position: relative;
   z-index: 2;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.85); /* semi-transparent black */
+  background-color: rgba(0, 0, 0, 0.85); 
   padding: 6rem 2rem;
   color: white;
   display: flex;
@@ -32,6 +32,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+
 }
 
 .about-header {
@@ -94,7 +95,7 @@
 .contact {
   position: relative;
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -177,7 +178,6 @@
   display: flex;
   align-items: center;
   padding: 0 1rem; 
-  /* min-width: 500px; */
   flex: 1;
   justify-content: center;
 }
@@ -270,4 +270,40 @@
   .booking-form input,
   .booking-form select { padding: 0.6rem; font-size: 0.9rem; }
   .booking-form button { font-size: 0.85rem; padding: 0.7rem 1.2rem; }
+}
+
+/* NotFound.css */
+
+.notfound-container {
+  background-color: #002147;
+  color: white;
+  height: 100vh; 
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.notfound-container h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.notfound-container p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.notfound-container a {
+  color: #ffffff;
+  text-decoration: underline;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.notfound-container a:hover {
+  color: #66b2ff;
 }
