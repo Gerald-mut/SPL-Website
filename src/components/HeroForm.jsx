@@ -1,5 +1,9 @@
 import React from 'react';
-import { Form, Input, Select, Button } from 'antd';
+import Button from 'antd/es/button'
+import Form from 'antd/es/form'
+import Input from 'antd/es/input'
+import Select from 'antd/es/select'
+
 
 const { Option } = Select;
 
@@ -11,7 +15,7 @@ export default function HeroForm({ onSuccess }) {
 
     const text = `Hello, I'm ${name}. I'd like a quote for *${service}*.\nPhone: ${phone}\nEmail: ${email}\nMessage: ${message || "N/A"}`;
     const encoded = encodeURIComponent(text);
-    const clientPhone = "+254787005003"; 
+    const clientPhone = "+254722980916"; 
 
     window.open(`https://wa.me/${clientPhone}?text=${encoded}`, "_blank");
 

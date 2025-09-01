@@ -1,21 +1,21 @@
 import { Helmet } from 'react-helmet';
 import './components.css';
 import HeroForm from './HeroForm';
-import { Modal } from 'antd';
+import Modal from 'antd/es/modal'
 import React, { useState, useEffect } from 'react';
-import { motion as Motion } from 'framer-motion';
+import { motion as Motion } from "framer-motion";
 
 const images = [
   '/assets/home-img.jpg',
-  '/assets/choreography.jpg',
-  '/assets/events4.jpg'
+  '/assets/choreography.webp',
+  '/assets/audiovisual.webp',
+  '/assets/events4.webp'
 ];
 
 const Hero = () => {
   const [bgIndex, setBgIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Preload images once on mount
   useEffect(() => {
     images.forEach((src) => {
       const img = new Image();
@@ -23,7 +23,6 @@ const Hero = () => {
     });
   }, []);
 
-  // Background image rotation
   useEffect(() => {
     const interval = setInterval(() => {
       setBgIndex((prev) => (prev + 1) % images.length);
@@ -45,7 +44,6 @@ const Hero = () => {
       </Helmet>
 
       <section className="hero" style={{ position: 'relative', height: '100vh', overflow: 'hidden' }}>
-        {/* Background Images */}
         <div className="hero-background" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
           {images.map((src, index) => (
             <Motion.img
@@ -56,6 +54,7 @@ const Hero = () => {
               initial={false}
               animate={{ opacity: index === bgIndex ? 1 : 0 }}
               transition={{ duration: 1 }}
+              loading="lazy"
               style={{
                 position: 'absolute',
                 top: 0,
@@ -79,7 +78,6 @@ const Hero = () => {
           zIndex: 2
         }} />
 
-        {/* Hero Content */}
         <div className="hero-content" style={{ position: 'relative', zIndex: 3 }}>
           <div className="hero-text">
             <h1 className="hero-title">

@@ -1,4 +1,4 @@
-import image1 from '/assets/choreography3.jpg';
+import image1 from '/assets/choreography3.webp';
 import './Pages.css';
 import { Helmet } from 'react-helmet';
 import React, { useState } from 'react';
@@ -12,7 +12,7 @@ export default function Contact() {
     message: ''
   });
 
-  const clientPhone = '+254787005003'; 
+  const clientPhone = '+254722980916'; 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,7 +38,7 @@ export default function Contact() {
         <meta name="keywords" content="contact SPL, event planning Nairobi, talent agency Kenya, book SPL, reach SPL Kenya" />
       </Helmet>
 
-      <img className="background-img" src={image1} alt="SPL Contact Background" />
+      <img className="background-img" src={image1} alt="SPL Contact Background" loading="lazy" />
       <div className="contact-overlay"></div>
 
       <div className="contact-content">
@@ -49,7 +49,7 @@ export default function Contact() {
           </p>
           <h3>Feel free to reach us out at</h3>
           <p className="contact-info">
-            Info@seoproductionske.com <br />
+             <a href="mailto:Info@seoproductionske.com">Info@seoproductionske.com</a><br />
             0722980916
           </p>
         </div>

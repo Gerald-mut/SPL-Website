@@ -4,15 +4,12 @@ import ServiceModal from './ServiceModal.jsx';
 import './components.css';
 import { Helmet } from 'react-helmet';
 
+export default function Services() {
 <Helmet>
   <title>SPL Services | Event Production, Talent & Casting in Nairobi</title>
   <meta name="description" content="Explore SPL’s expert services in Nairobi event management and production, talent management, and casting. We create unforgettable events, represent top-tier creatives, and cast standout talent across Kenya." />
   <meta name="keywords" content="event services Nairobi, talent agency Kenya, casting services, event production, SPL Kenya, creative agency Nairobi" />
 </Helmet>
-
-
-
-export default function Services() {
     const servicesData = [
         {
             id: 'corporate-events',
@@ -40,7 +37,7 @@ export default function Services() {
         {
             id: 'talent-management',
             title: 'Talent Management',
-            img: '/assets/audiovisual.jpg',
+            img: '/assets/audiovisual.webp',
             description: 
             (
     <>
@@ -61,7 +58,7 @@ export default function Services() {
         {
           id: 'casting',
           title: 'Casting',
-          img: '/assets/choreography6.jpg',
+          img: '/assets/choreography6.webp',
           description: (
               <>
                 <p>SPL’s casting agency in Nairobi sources standout talent to bring your vision to life whether you’re planning a shoot, an event, or a creative campaign.</p>

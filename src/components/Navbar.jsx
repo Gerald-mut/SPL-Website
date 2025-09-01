@@ -36,7 +36,8 @@ function Navbar() {
           style={{ width: 60, height: 60, margin: 0, padding: 0 }}
         />
       </div>
-      <button className={`menu-toggle ${menuOpen ? 'active' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
+      <button   aria-controls="mobile-menu"
+  aria-expanded="false" className={`menu-toggle ${menuOpen ? 'active' : ''}`} onClick={() => setMenuOpen(!menuOpen)} >
         &#9776;
       </button>
       <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>

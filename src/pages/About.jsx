@@ -17,9 +17,6 @@ export default function About() {
       </Helmet>
 
       <section className="about">
-                  <div className="bg-blue-500 text-white p-4">
-  Tailwind is working!
-</div>
         <div className="bg-image">
         <div className="about-overlay">
           <h2 className="about-header">Who We Are</h2>

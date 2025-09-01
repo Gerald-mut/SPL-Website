@@ -4,7 +4,7 @@ import './components.css';
 export default function ServiceCard({ service, onOpen }) {
     return (
         <div className="service-card">
-            <img src={service.img} alt={service.title} className="card-image" />
+            <img src={service.img} alt={service.title} className="card-image" loading="lazy"/>
             <div className="card-overlay">
                 <h2 className="card-title">{service.title}</h2>
                 </div>
