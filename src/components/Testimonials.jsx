@@ -34,7 +34,6 @@ export default function Testimonials() {
           </div>
         ))}
       </div>
-      <img src={"/assets/audiovisual3.jpg"} alt="audiovisual" />
     </section>
   );
 }
