@@ -11,14 +11,12 @@ const testimonials = [
       "SEO Production Limited delivered outstanding décor and branding solutions that elevated our corporate spaces and visual identity. Their creativity, professionalism, and attention to detail made a lasting impact. We highly recommend them.",
     name: "Lina Bahati",
     title: "Middle East Bank Kenya",
-    image: "./assets/testimonial2.jpg",
   },
   {
     quote:
       "Working with SEO Production Limited for our casting needs was an outstanding experience from start to finish. They understood our vision and delivered exceptional talent perfectly aligned with our goals. Professional, responsive, and detail oriented, they made the casting process seamless. The talent brought incredible energy and authenticity to the production. We couldn’t be happier with the results and look forward to working together again. Highly recommended for top-tier casting services.",
     name: "Maria Ndegwa",
     title: " Production Coordinator, Core Production K Ltd.",
-    image: "./assets/testimonial3.jpg",
   },
 ];
 
@@ -36,6 +34,7 @@ export default function Testimonials() {
           </div>
         ))}
       </div>
+      <img src={"/assets/audiovisual3.jpg"} alt="audiovisual" />
     </section>
   );
 }

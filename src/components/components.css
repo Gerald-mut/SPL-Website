@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Caprasimo";
+  src: url("/assets/fonts/Caprasimo-Regular.woff2") format("woff2"),
+    url("/assets/fonts/Caprasimo-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 /* navbar */
 .navbar {
   position: fixed;
@@ -16,13 +24,13 @@
 
 .navbar-logo {
   left: 1rem;
-  width: auto; 
-  position: absolute;      
-  top: 1rem;                   
-  left: 0.3rem;      
-  width: 80px;                        
-  height: 80px;            
-  z-index: 10; 
+  width: auto;
+  position: absolute;
+  top: 1rem;
+  left: 0.3rem;
+  width: 80px;
+  height: 80px;
+  z-index: 10;
 }
 
 .navbar-links {
@@ -44,11 +52,11 @@
 }
 
 .navbar-links li a:hover {
-  color: #FF5733;
+  color: #ff5733;
 }
 
 .navbar-links li a.active {
-  color: #FF5733;
+  color: #ff5733;
 }
 
 .menu-toggle {
@@ -60,11 +68,11 @@
   color: #002147;
   position: absolute;
   right: 0.5rem;
-  top: 1rem;    
+  top: 1rem;
   padding: 0.5rem 0.75rem;
   border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: background 0.3s ease, color 0.3s ease;               
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .menu-toggle.active {
@@ -91,16 +99,15 @@ html {
     z-index: 998;
   }
 
-.navbar-logo {
-  left: 1rem;
-  width: auto; 
-  position: absolute;      
-  top: 0.2rem;                   
-  left: 0rem;                              
-  height: auto;            
-  z-index: 10; 
-}
-
+  .navbar-logo {
+    left: 1rem;
+    width: auto;
+    position: absolute;
+    top: 0.2rem;
+    left: 0rem;
+    height: auto;
+    z-index: 10;
+  }
 
   .navbar-links.open {
     display: flex;
@@ -114,17 +121,18 @@ html {
     color: black;
   }
 
-    .hamburger-icon {
+  .hamburger-icon {
     font-size: 20px;
   }
 }
-
 
 /* Hero */
 .hero {
   position: relative;
   width: 100vw;
   overflow: hidden;
+  min-height: 100vh;
+  contain: layout paint;
 }
 
 .background-img {
@@ -135,18 +143,18 @@ html {
   height: 100vh;
   object-fit: cover;
   z-index: 1;
-  transition: opacity 1s ease-in-out;
+  opacity: 1;
+  transition: none;
 }
 
-
 .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.5); 
-    z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
 
 .hero-content {
@@ -167,16 +175,19 @@ html {
   flex: 2;
   color: #fff;
   text-align: left;
-  min-width: 0;  
+  min-width: 0;
 }
 
 .hero-title {
+  font-family: "Caprasimo", sans-serif;
+  font-display: swap;
   font-size: 3.5rem;
   font-weight: 700;
   color: #fff;
   margin-bottom: 1rem;
   line-height: 1.1;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  font-display: swap;
 }
 
 .hero-description {
@@ -184,7 +195,7 @@ html {
   color: #fff;
   margin-bottom: 0;
   max-width: 700px;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .hero-action {
@@ -206,16 +217,14 @@ html {
   align-self: center;
   white-space: nowrap;
   transition: background 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   height: 56px;
   width: 250px;
 }
 
 .hero-btn:hover {
-  background: #e14a28; 
+  background: #e14a28;
 }
-
-
 
 /* Gallery */
 .gallery-carousel {
@@ -299,7 +308,7 @@ html {
   cursor: pointer;
   padding: 0.5rem 1rem;
   border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: background 0.3s ease;
   position: relative;
 }
@@ -309,16 +318,16 @@ html {
 }
 
 @media (max-width: 768px) {
-    .gallery-card {
+  .gallery-card {
     position: relative;
-    justify-content: center;   
+    justify-content: center;
   }
 
   .gallery-content {
     flex-direction: column;
     text-align: center;
-    order: 2;              
-    width: 100%; 
+    order: 2;
+    width: 100%;
   }
 
   .gallery-image {
@@ -331,7 +340,7 @@ html {
   }
 
   .arrow {
-    display: inline-block !important; 
+    display: inline-block !important;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -342,7 +351,7 @@ html {
   }
 
   .arrow.left {
-    left: -1rem; 
+    left: -1rem;
     background: #ffffff;
   }
 
@@ -350,7 +359,6 @@ html {
     right: -1rem;
     background: #ffffff;
   }
-
 }
 
 /* Services */
@@ -361,9 +369,9 @@ html {
   overflow: hidden;
   padding: 4rem 2rem;
   text-align: center;
-  display: flex;            
-  flex-direction: column;   
-  align-items: center; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .services-header {
@@ -386,7 +394,6 @@ html {
   flex-direction: column;
   width: 100%;
 }
-
 
 .carousel {
   display: flex;
@@ -436,7 +443,6 @@ html {
   filter: brightness(70%);
 }
 
-
 .card-overlay {
   z-index: 2;
   position: absolute;
@@ -447,9 +453,9 @@ html {
   z-index: 2;
   box-sizing: border-box;
   display: flex;
-  justify-content: center;     
-  align-items: flex-start;     
-  text-align: center; 
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
   border-radius: 15px;
   overflow: hidden;
 }
@@ -459,9 +465,8 @@ html {
   margin: 5rem;
   margin-bottom: 0.5rem;
   color: #ffffff;
-  font-family: 'Caprasimo', serif;
+  font-family: "Caprasimo", serif;
 }
-
 
 .card-plus {
   position: absolute;
@@ -481,7 +486,6 @@ html {
   margin-bottom: 1rem;
 }
 
-
 .card-title {
   font-size: 1.25rem;
   font-weight: 600;
@@ -489,17 +493,19 @@ html {
   margin-bottom: 0.25rem;
 }
 
-
 /* Service Modal */
 .modal-backdrop {
-  position: fixed; inset: 0;
-  background: rgba(0,0,0,0.6);
-  display: flex; align-items: center; justify-content: center;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1000;
   overflow-y: hidden;
 }
 .modal-content {
-  background: #002147;;
+  background: #002147;
   padding: 2rem;
   max-width: 600px;
   width: 90%;
@@ -507,9 +513,9 @@ html {
   overflow-y: auto;
   border-radius: 8px;
   position: relative;
-   overflow-y: scroll;
-   scrollbar-width: none;
-   -ms-overflow-style: none;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .modal-content h2 {
@@ -530,9 +536,12 @@ html {
 
 .modal-close {
   position: absolute;
-  top: 0.5rem; right: 0.5rem;
-  background: none; border: none;
-  font-size: 1.5rem; cursor: pointer;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
   color: #ffffff;
 }
 
@@ -545,7 +554,7 @@ html {
 }
 
 @media (max-width: 768px) {
- .service-card {
+  .service-card {
     justify-content: center;
     width: 100%;
     max-width: 300px;
@@ -586,11 +595,11 @@ html {
   max-width: 450px;
   height: 450px;
   flex: 1 1 300px;
-  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center;    
+  justify-content: center;
+  align-items: center;
   text-align: center;
   padding-bottom: 1rem;
 }
@@ -599,7 +608,7 @@ html {
   font-style: italic;
   margin-bottom: 1rem;
   font-size: 1rem;
-  color:#ffffff;
+  color: #ffffff;
 }
 
 .testimonial-author {
@@ -616,7 +625,8 @@ html {
     font-size: 20px;
   }
 
-  .hero-title, services-header {
+  .hero-title,
+  services-header {
     font-size: 2.8rem;
   }
 
@@ -654,7 +664,7 @@ html {
   }
 
   .hero-content {
-    padding: 9rem 2rem; 
+    padding: 9rem 2rem;
   }
 }
 
@@ -666,15 +676,22 @@ html {
     font-size: 16px;
   }
 
-  .gallery-title, .card-overlay h2, .modal-content h2 {
+  .gallery-title,
+  .card-overlay h2,
+  .modal-content h2 {
     font-size: 1.5rem;
   }
 
-  .gallery-description, .modal-content p, .testimonial-quote {
+  .gallery-description,
+  .modal-content p,
+  .testimonial-quote {
     font-size: 1rem;
   }
 
-  .hero-title, .services-header, .testimonials-title, .section-header {
+  .hero-title,
+  .services-header,
+  .testimonials-title,
+  .section-header {
     font-size: 2.8rem;
   }
 
@@ -704,15 +721,22 @@ html {
     font-size: 14px;
   }
 
-  .gallery-title, .card-overlay h2, .modal-content h2 {
+  .gallery-title,
+  .card-overlay h2,
+  .modal-content h2 {
     font-size: 1.25rem;
   }
 
-  .gallery-description, .modal-content p, .testimonial-quote {
+  .gallery-description,
+  .modal-content p,
+  .testimonial-quote {
     font-size: 0.9rem;
   }
 
-  .hero-title, .services-header, .testimonials-title, .section-header {
+  .hero-title,
+  .services-header,
+  .testimonials-title,
+  .section-header {
     font-size: 2.2rem;
   }
 
@@ -736,7 +760,7 @@ html {
   }
 
   .hero-content {
-    padding: 9rem 2rem; 
+    padding: 9rem 2rem;
   }
 
   .gallery-content {
