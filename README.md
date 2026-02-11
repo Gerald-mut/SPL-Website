@@ -1,12 +1,6 @@
-# React + Vite
+# SPL Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is an entertainment website built using react js and designed using figma.
 
-Currently, two official plugins are available:
+- Link to figma design [figma](https://www.figma.com/design/yX9oXK9HrHKbziql8Ex7gY/Event-ticketing-website?t=QdpAHUIUlly1Aa8e-0)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
